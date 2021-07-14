@@ -39,6 +39,8 @@ view();
 
 
 }
+
+
 }
 
 var view=function(){
@@ -56,6 +58,28 @@ function remove (id){
 persons.splice(id,1);
 view();
 
+}
 
 
+function valida() {
+    let email=$("#Email").val();
+    let pass=$("#Password").val();
+
+    if(email==='' || pass===''){
+        document.getElementById('fill').innerHTML='please fill right data';
+    if(email===''){
+         $("#Email").addClass("error");
+    }
+    else{$("#Email").removeClass("error");}
+     if (pass===''){
+        $("#Password").addClass("error");}
+        else{$("#Password").removeClass("error");}
+    
+    }
+    else{
+        $("#Email").removeClass("error");
+        $("#Password").removeClass("error");
+        document.getElementById('fill').innerHTML='';
+    
+}
 }
